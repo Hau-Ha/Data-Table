@@ -1,0 +1,101 @@
+.status {
+  background: #fff;
+  margin-bottom: 0.25em;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.status {
+  position: relative;
+  line-height: 1em;
+  padding: 0.5em;
+  padding-left: 2em;
+  transition: color 500ms;
+}
+.status:before,
+.status:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  transition: all 500ms;
+}
+.status.-pending {
+  color: red;
+  color: #666;
+}
+.status.-pending:before,
+.status.-pending:after {
+  background: #888;
+  animation-name: spin;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.status.-pending:before {
+  width: 0.25em;
+  height: 0.25em;
+  top: 0.5em;
+  left: 0.875em;
+  border-radius: 0.125em;
+  transform-origin: 50% 0.5em;
+}
+.status.-pending:after {
+  width: 0.25em;
+  height: 0.25em;
+  top: 1.25em;
+  left: 0.875em;
+  border-radius: 0.125em;
+  transform-origin: 50% -0.25em;
+}
+.status.-online {
+  color: #368;
+}
+.status.-online:before,
+.status.-online:after {
+  background: #6cf !important;
+  border-radius: 0.125em;
+}
+.status.-online:before {
+  width: 0.25em;
+  height: 1em;
+  top: 0.5em;
+  left: 0.875em;
+  transform-origin: 50% 0.875em;
+  transform: translate(-0.177em, -0.11em) rotate(0.125turn);
+}
+.status.-online:after {
+  width: 0.25em;
+  height: 0.5em;
+  top: 1em;
+  left: 0.875em;
+  transform-origin: 50% 0.375em;
+  transform: translate(-0.177em, -0.11em) rotate(-0.125turn);
+}
+.status.-offline {
+  color: #802;
+}
+.status.-offline:before,
+.status.-offline:after {
+  background: #f04;
+  border-radius: 0.125em;
+}
+.status.-offline:before {
+  width: 0.25em;
+  height: 1em;
+  top: 0.5em;
+  left: 0.875em;
+  transform: rotate(0.125turn);
+}
+.status.-offline:after {
+  width: 0.25em;
+  height: 1em;
+  top: 0.5em;
+  left: 0.875em;
+  transform: rotate(-0.125turn);
+}

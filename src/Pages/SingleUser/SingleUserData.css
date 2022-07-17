@@ -1,0 +1,13 @@
+p span {
+  background: var(--bg1) !important;
+}
+
+.btn-container {
+  text-align: center;
+}
+
+.disabled-link {
+  cursor: default;
+  text-decoration: none;
+  color: var(--white);
+}

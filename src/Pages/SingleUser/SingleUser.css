@@ -1,0 +1,17 @@
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  margin-top: 5em;
+  max-width: var(--sm);
+  padding: var(--sm-spacing);
+  background: var(--bg2);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+@media only screen and (max-width: 760px),
+  (min-device-width: 768px) and (max-device-width: 1024px) {
+  .container {
+    display: block;
+  }
+}
